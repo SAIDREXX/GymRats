@@ -1,0 +1,173 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../layouts/Header.astro";
+
+import "@fontsource/russo-one";
+---
+
+<Layout title="¡Regístrate!">
+  <Header title="Registrate" />
+  <div
+    class="overflow-hidden flex relative justify-between w-[360px] h-[440px] my-[8%] mx-auto bg-black/25 border-gymborderred border rounded-md shadow-2xl shadow-black/10 [&>form>input]:font-Kanit [&>form>input]:text-xl [&>form>input]:text-gymred [&>form>input]:w-[95%] [&>form>input]:py-[10px] [&>form>input]:px-[5px] [&>form>input]:my-[5px] [&>form>input]:mx-0 [&>form>input]:border-0 [&>form>input]:border-b-[1px] [&>form>input]:border-gymgray [&>form>input]:outline-none [&>form>input]:bg-transparent [&>form>input]:placeholder-gymgray [&>select>option]:font-Kanit [&>select>option]:text-gymgray"
+  >
+    <form
+      class="w-72 absolute top-24 left-10 duration-500"
+      method="post"
+      action="../sql/signup_controller.php"
+      id="Form1"
+    >
+      <h3 class="font-Russo text-center text-3xl mb-1 text-gymred">
+        DATOS PERSONALES
+      </h3>
+
+      <input type="text" placeholder="Nombre" id="name" name="name" />
+      <input
+        type="text"
+        placeholder="Apellidos"
+        id="lastName"
+        name="lastName"
+      />
+
+      <div
+        class="flex self-end [&>input]:font-Kanit [&>input]:text-xl [&>input]:text-gymred [&>input]:w-[95%] [&>input]:py-[10px] [&>input]:px-[5px] [&>input]:my-[5px] [&>input]:mx-0 [&>input]:border-0 [&>input]:border-b-[1px] [&>input]:border-gymgray [&>input]:outline-none [&>input]:bg-transparent [&>input]:placeholder-gymgray"
+      >
+        <input type="number" placeholder="Edad" id="age" name="age" />
+
+        <select
+          class="font-Kanit text-xl bg-transparent text-gymgray py-[11px] px-[5px] h-[50%] w-[100%] mb-[5px] focus:outline-none border-gymgray border-0 border-b-[1px]"
+          name="gener"
+          id="generOptions"
+          aria-labelledby="Selecciona tu genero"
+        >
+          <option value="Seleccionar">Genero</option>
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+      <div class="w-[100%] my-[30px] mx-auto text-center" id="Next1">
+        <button
+          class="w-28 h-9 my-0 mx-[10px] bg-[#EBEBEB] rounded-md border-0 outline-none text-gymred font-Kanit cursor-pointer"
+          type="button">Siguiente</button
+        >
+      </div>
+    </form>
+
+    <form
+      method="post"
+      action=""
+      id="Form2"
+      class="w-72 absolute top-24 left-[450px] duration-500"
+    >
+      <h3 class="font-Russo text-center text-3xl mb-5 text-gymred">
+        DATOS DEPORTIVOS
+      </h3>
+      <input
+        type="number"
+        placeholder="Estatura(cm)"
+        id="height"
+        name="height"
+      />
+      <input type="number" placeholder="Peso(kg)" id="weight" name="weight" />
+
+      <div class="groupExperience">
+        <select name="experience" id="experienceOptions">
+          <option value="Seleccionar">Experiencia</option>
+          <option value="Principiante">Principiante</option>
+          <option value="Intermedio">Intermedio</option>
+          <option value="Avanzado">Avanzado</option>
+        </select>
+      </div>
+
+      <div class="button">
+        <button type="button" id="Back1">Anterior</button>
+        <button type="button" id="Next2">Siguiente</button>
+      </div>
+    </form>
+
+    <form
+      method="post"
+      action=""
+      id="Form3"
+      class="w-72 absolute top-24 left-[450px] duration-500"
+    >
+      <h3 class="font-Russo text-center text-3xl mb-5 text-gymred">
+        DATOS DE LA CUENTA
+      </h3>
+      <input type="text" placeholder="Usuario" name="username" />
+      <input type="password" placeholder="Contraseña" name="password" />
+      <input type="hidden" id="name_hidden" name="name_hidden" />
+      <input type="hidden" id="lastName_hidden" name="lastName_hidden" />
+      <input type="hidden" id="age_hidden" name="age_hidden" />
+      <input type="hidden" id="gener_hidden" name="gener_hidden" />
+      <input type="hidden" id="weight_hidden" name="weight_hidden" />
+      <input type="hidden" id="height_hidden" name="height_hidden" />
+      <input type="hidden" id="experience_hidden" name="experience_hidden" />
+
+      <div class="button">
+        <button type="button" id="Back2">Anterior</button>
+        <button type="submit" id="submit" name="sendForm">Enviar</button>
+      </div>
+    </form>
+    <dvi
+      class="w-[360px] h-10 my-0 mx-auto flex items-center shadow-lg relative"
+    >
+      <div
+        class="absolute h-[100%] w-[120px] bg-gymred duration-1000 after:content-[''] after:h-0 after:w-0 after:border-t-[20px] after:border-t-transparent after:border-b-[20px] after:border-b-transparent after:absolute after:-right-5 after:top-0 after:border-l-[20px] after:border-l-gymred"
+        id="progress"
+      >
+      </div>
+      <div class="w-[120px] text-center text-white relative">
+        <small class="font-Russo text-lg">Paso 1</small>
+      </div>
+      <div class="w-[120px] text-center text-white relative">
+        <small class="font-Russo text-lg">Paso 2</small>
+      </div>
+      <div class="w-[120px] text-center text-white relative">
+        <small class="font-Russo text-lg">Paso 3</small>
+      </div>
+    </dvi>
+  </div>
+</Layout>
+
+<script>
+  document
+    .getElementById("register-class")
+    .classList.remove("text-gymgray", "hover:text-gymred");
+  document.getElementById("register-class").classList.add("text-gymred");
+
+  //Form Overflow
+
+  var Form1 = document.getElementById("Form1");
+  var Form2 = document.getElementById("Form2");
+  var Form3 = document.getElementById("Form3");
+
+  var Next1 = document.getElementById("Next1");
+  var Next2 = document.getElementById("Next2");
+  var Back1 = document.getElementById("Back1");
+  var Back2 = document.getElementById("Back2");
+
+  var progress = document.getElementById("progress");
+
+  Next1.onclick = function () {
+    Form1.style.left = "-450px";
+    Form2.style.left = "40px";
+    progress.style.width = "240px";
+  };
+
+  Back1.onclick = function () {
+    Form1.style.left = "40px";
+    Form2.style.left = "450px";
+    progress.style.width = "120px";
+  };
+  Next2.onclick = function () {
+    Form2.style.left = "-450px";
+    Form3.style.left = "40px";
+    progress.style.width = "360px";
+  };
+  Back2.onclick = function () {
+    Form2.style.left = "40px";
+    Form3.style.left = "450px";
+    progress.style.width = "240px";
+  };
+</script>

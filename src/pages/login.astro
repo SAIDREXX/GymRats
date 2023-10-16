@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../layouts/Header.astro";
+import "@fontsource/russo-one";
+---
+
+<Layout title="¡Regístrate!">
+  <Header title="Registrate" />
+</Layout>
+
+<script>
+  document
+    .getElementById("login-class")
+    .classList.remove("text-gymgray", "hover:text-gymred");
+  document.getElementById("login-class").classList.add("text-gymred");
+</script>
